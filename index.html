@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+  <meta charset="UTF-8">
+
+  <title>Sakiのポートフォリオ</title>
+
+  <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+<div class="container">
+    <div class="hero">
+        <h1>Saki Portfolio</h1>
+        <p class="catch">
+            ～ 好きな野球を楽しみながら、
+            Web制作を学んでいきたい ～
+        </p>
+
+        <div>
+            <img id="mainImage" 
+                src="images/baseball-field.jpg" alt="メイン画像">
+        </div>
+
+        <div class="image-button">
+            <button onclick="changeImage()">画像を変える</button>
+        </div>
+
+    </div>
+
+    <div class="section">
+        <h2>自己紹介</h2>
+        <p id="text">Sakiです。未経験からWebコーダー・フロントエンジニアを目指して学習しています。<br>
+        HTML / CSS / JavaScriptを中心に、実際に動くアプリ制作に取り組んでいます。
+        </p>
+
+        <h3>好きなこと</h3>
+        <ul class="hobby-list">
+            <li>MLB視聴</li>
+            <li>ゲーム</li>
+            <li>ドラマ視聴</li>
+        </ul>
+    </div>
+
+
+    <div class="section">
+        <h2>スキル</h2>
+        <ul>
+            <li>HTML / CSS</li>
+            <li>JavaScript（DOM操作・localStorage）</li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h2>テキスト変更</h2>
+        <p id="clickMessage">ボタンを押してみてください👇</p>
+        <button onclick="changeText()">クリックしてね</button>
+    </div>
+
+    <div class="section">
+        <h2>テーマ切り替え</h2>
+        <button id="themeBtn" onclick="changeColor()">ダークモードにする</button>
+    </div>
+
+    <div class="section">
+        <h2>メッセージ表示</h2>
+        <div id="card" class="hidden-card">
+            <p>ご覧いただきありがとうございます！<br>
+            JavaScriptを使った動きのある実装に挑戦しました。</p>
+        </div>
+
+        <button onclick="toggleCard()">メッセージを見る</button>
+    </div>
+
+    <div class="section">
+        <h2>カウンター</h2>
+        <p id="count">0</p>
+
+        <div class="counter-buttons">
+        <button onclick="plus()" class="action-btn">+</button>
+        <button onclick="minus()" class="action-btn">-</button>
+        <button onclick="reset()" class="reset-btn">リセット</button>
+        </div>
+    </div>
+
+    <div class="todo-section">
+        
+        <h2 class="todo-title">ToDoアプリ</h2>
+
+        <p>
+            JavaScriptで作成したシンプルなToDoアプリです。<br>
+            追加・削除・完了管理・ローカルストレージ保存機能を実装しています。
+        </p>
+
+        <h3>機能一覧</h3>
+        <ul>
+            <li>タスクの追加（Enterキー対応）</li>
+            <li>チェックボックスで完了管理</li>
+            <li>未完了・完了で自動並び替え</li>
+            <li>タスク削除機能</li>
+            <li>ローカルストレージによるデータ保存</li>
+            <li>残タスク数の表示</li>
+        </ul>
+
+        <h3>工夫した点</h3>
+            <p>
+                ・完了タスクを下に移動することで視認性を改善<br>
+                ・ローカルストレージでページ更新後も保持
+            </p>
+
+        <p style = "font-weight: bold;">👇　実際に操作できます</p>
+
+        <h2>ToDoリスト</h2>
+
+        <p id="todoCount">残り: 0件</p>
+
+        <div class="todo-input-area">
+            <input id="todoInput" type="text" placeholder="やることを書く">
+            <button onclick="addTodo()" class="action-btn">追加</button>
+        </div>
+
+        <ul id="todoList"></ul>
+
+        <div class="github-area">
+            <a href="URL" target="_blank" class="github-link">
+                Githubでコードを見る
+            </a>
+        </div>
+    </div>
+</div>
+
+<script src="js/script.js"></script>
+
+</body>
+</html>

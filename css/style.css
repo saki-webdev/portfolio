@@ -1,0 +1,474 @@
+    * {
+        box-sizing: border-box;
+    }
+
+    body {
+        color: var(--text);
+        padding: 20px;
+        background:
+            repeating-linear-gradient(
+                -45deg,
+                rgba(255,255,255,0.08),
+                rgba(255,255,255,0.08) 15px,
+                transparent 15px,
+                transparent 30px
+            ),
+
+            linear-gradient(
+                135deg,
+                #ADC8DB,
+                #c7dbea
+            );
+        font-family: "Helvetica Neue", Arial, sans-serif;
+        font-size: 16px;
+        line-height: 1.7;
+    }
+
+    h1 {
+        color: #222;
+        font-size: 44px;
+        font-weight: 700;
+        margin-bottom: 5px;
+    }
+
+    h2 {
+        color: #222;
+        margin-top: 30px;
+        margin-bottom: 15px;
+        border-left: 6px solid var(--main);
+        padding-left: 12px;
+        font-size: 22px;
+    }
+
+    h3 {
+        color: #444;
+        margin-top: 25px;
+        margin-bottom: 5px;
+        margin-left: 10px;
+        font-size: 18px;
+        border-left: 4px solid #4F6F5F;
+        padding-left: 10px;
+    }
+
+    p {
+        color: var(--subtext);
+        margin-bottom: 8px;
+        margin-left: 20px;
+        font-size: 15px;
+    }
+
+    ul {
+        padding-left: 20px;
+        margin-top: 10px;
+        margin-left: 20px;
+    }
+
+    li {
+        color: var(--subtext);
+        margin-left: 5px;
+        margin-bottom: 4px;
+        font-size: 15px;
+        line-height: 1.6;
+    }
+
+    .hobby-list {
+        color: #666;
+        margin-top: 5px;
+        text-align: left;
+        display: inline-block;
+    }
+
+    h2 + ul {
+        margin-top: 8px;
+    }
+
+    img {
+        width: 100%;
+        max-width: 500px;
+        aspect-ratio: 16 / 9;
+        height: auto;
+        object-fit: cover;
+
+        margin-top: 20px;
+        border-radius: 10px;
+
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+
+        transition: opacity 0.6s ease-in-out, 
+                    transform 0.6s ease-in-out;
+
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    img.fade-out {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+
+    img.fade-in {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    .image-button {
+        text-align: center;
+        margin-top: 30px;
+    }
+
+    h1 {
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+        letter-spacing: 1.3px;
+    }
+
+    a{
+        text-decoration: none;
+    }
+
+    button {
+        margin: 5px;
+        padding: 8px 16px;
+        background-color: var(--accent);
+        color: white;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: 
+            transform 0.1s, 
+            background-color 0.2s;
+    }
+
+    button:hover {
+        background-color: var(--accent-hover);
+        transform: translateY(-1px);
+    }
+
+    .button-group {
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+        flex-wrap: wrap;
+    }
+
+    .container {
+        width: 100%;
+        max-width: 900px;
+        margin: 0 auto;
+    }
+
+    .hero {
+        background-color: rgba(255,255,255,0.95);
+        border: 3px solid var(--main);
+        border-radius: 16px;
+        padding: 30px;
+        margin-bottom: 40px;
+    }
+
+    .section {
+        background-color: #f8fbfd;
+        border: 3px solid var(--main);
+        border-radius: 16px;
+        padding: 30px;
+        margin-bottom: 40px;        
+        transition: 
+            all 0.25s ease;
+        transform: translateX(0);
+    }
+
+    .section:hover {
+        transform: translateX(-10px);
+        background-color: #eef6fb;
+    }
+
+    .todo-section {
+        background-color: #f8fbfd;
+        border: 3px solid var(--main);
+        border-radius: 16px;
+        padding: 30px;
+        transition: 
+            all 0.25s ease;
+        transform: translateX(0);
+        position: relative;
+    }
+
+    .todo-section:hover {
+        transform: translateX(-10px);
+        background-color: #eef6fb;
+    }
+
+    .hidden-card {
+        opacity: 0;
+        transform: translateY(20px);
+        transition: 
+            opacity 0.5s, 
+            transform 0.5s;
+    }
+
+    .show {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    .big {
+        color: #dc3545;
+        transform: scale(1.2);
+        transition: all 0.3s;
+        font-weight: bold;
+    }
+
+    .reset-btn {
+        background-color: var(--accent);
+    }
+
+    .reset-btn:hover {
+        background-color: var(--accent-hover);
+    }
+
+    #count {
+        text-align: center;
+        font-size: 24px;
+        transition: transform 0.2s;
+    }
+
+    .counter-buttons {
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+    }
+
+    .section h2 {
+        margin-top: 0;
+    }
+
+    .todo-title {
+        margin-top: 0;
+    }
+
+    body.dark {
+        background: linear-gradient(
+            135deg,
+            #243447,
+            #1B2635
+        );
+    }
+
+    body.dark .hero,
+    body.dark .section,
+    body.dark .todo-section {
+        background-color: #444;
+        border: 2px solid #3F7A5A;
+    }
+
+    body.dark .section:hover,
+    body.dark .todo-section:hover {
+        border-color: #3F7A5A;
+        background-color: #4a4a4a;
+    }
+
+    body.dark #todoList li {
+        background-color: #555;
+    }
+
+    body.dark p,
+    body.dark li,
+    body.dark h1,
+    body.dark h2,
+    body.dark h3 {
+        color: #fff;
+    }
+
+    body.dark h2 {
+        border-left-color: #3F7A5A;
+    }
+
+    body.dark h3 {
+        border-left-color: #3F7A5A;
+    }
+
+    body.dark #todoInput {
+        background-color: #555;
+        color: white;
+        border: 2px solid #3F7A5A;
+    }
+
+    body.dark #todoInput::placeholder {
+        color: #ccc;
+    }
+
+    body.dark #count.big {
+        color: red;
+    }
+
+    #todoList {
+        width: 100%;
+        padding: 0;
+        margin-top: 15px;
+        list-style: none;
+        padding-left: 0;
+        margin-left: 0;
+    }
+
+    .todo-input-area {
+        margin-top: 15px;
+        display: flex;
+        gap: 10px;
+        justify-content: center;
+    }
+
+    #todoInput {
+        padding: 8px;
+        width: 60%;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+    }
+
+    #todoInput:focus {
+        outline: none;
+        border: 1px solid var(--main);
+    }
+
+    body.dark #todoInput:focus {
+        border-color: #4F8A68;
+    }
+
+    #todoList li {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: #f7fbfe;
+        padding: 12px 15px;
+        border-radius: 8px;
+        margin-top: 15px;
+        width: 100%;
+        box-sizing: border-box;
+        transition: transform 0.2s;
+    }
+
+    #todoList li:hover {
+        transform: scale(1.01);
+    }
+
+    #todoList button {
+        background-color: var(--accent);
+        padding: 5px 10px;
+        font-size: 12px;
+    }
+
+    #todoList button:hover {
+        background-color: var(--accent-hover);
+    }
+
+    #todoInput + button {
+        margin-left: 10px;
+    }
+
+    #todoList span {
+        flex: 1;
+        text-align: left;
+    }
+
+    #todoList input[type="checkbox"] {
+        margin-top: 10px;
+        accent-color: #4D7EA8;
+    }
+
+    .done {
+        text-decoration: line-through;
+        opacity: 0.6;
+    }
+
+    .todo-section p,
+    .todo-section ul {
+        text-align: left;
+    }
+
+    .hero,
+    .todo-section,
+    #todoList li {
+        border-radius: 16px;
+    }
+
+
+    :root {
+        --bg: #ADC8DB;
+        --main: #255438;
+        --accent: #B55E43;
+        --accent-hover: #C96F52;
+
+        --text: #333;
+        --subtext: #666;
+    }
+
+    @media (max-width: 600px) {
+
+        body {
+            padding: 10px;
+        }
+
+        .hero,
+        .section,
+        .todo-section {
+            padding: 20px;
+            transform: none;
+        }
+
+        #todoInput {
+            width: 100%;
+        }
+
+        .todo-input-area {
+            flex-direction: column;
+        }
+    }
+
+    .catch {
+        text-align: center;
+        margin: 0 0 25px 0;
+        color: #555;
+        font-size: 14px;
+    }
+    
+    .github-area {
+        display: flex;
+        justify-content: center;
+        margin-top: 30px;
+    }
+
+    .github-link {
+        display: inline-block;
+        padding: 8px 16px;
+        background-color: var(--main);
+        color: white;
+        border-radius: 8px;
+    }
+
+    .github-link:hover {
+        background-color: #3F7A5A;
+    }
+
+    body.dark .github-link {
+        background-color: #3F7A5A;
+    }
+
+    body.dark .github-link:hover {
+        background-color: #4F8A68;
+    }
+
+    .action-btn {
+        background-color: #4D7EA8;
+    }
+
+    .action-btn:hover {
+        background-color: #6795BD;
+    }
+
+    .delete-btn {
+        background-color: var(--accent);
+    }
+
+    .delete-btn:hover {
+        background-color: var(--accent-hover);
+    }
