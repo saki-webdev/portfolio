@@ -329,10 +329,10 @@
     #todoList span {
         flex: 1;
         text-align: left;
+        margin-left: 10px;
     }
 
     #todoList input[type="checkbox"] {
-        margin-top: 10px;
         accent-color: #4D7EA8;
     }
 

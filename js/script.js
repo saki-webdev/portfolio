@@ -27,29 +27,37 @@
         "images/cafe.jpg"
         ];
 
+    images.forEach(src => {
+        const img = new Image();
+        img.src = src;
+    });
+
     let currentImage = 0;
 
     function changeImage() {
 
         const img = document.getElementById("mainImage");
 
-        img.classList.remove("fade-in");
-        img.classList.add("fade-out");
+        currentImage = (currentImage + 1) % images.length;
 
-        currentImage++;
+        const nextImage = new Image();
 
-        if (currentImage >= images.length) {
-            currentImage = 0;
-        }
+        nextImage.onload = () => {
 
-        setTimeout (() => {
+            img.classList.remove("fade-in");
+            img.classList.add("fade-out");
 
-            img.src = images[currentImage];
+            setTimeout(() => {
+                img.src = nextImage.src;
 
-            img.classList.remove("fade-out");
-            img.classList.add("fade-in");
+                img.classList.remove("fade-out");
+                img.classList.add("fade-in");
+            }, 600);
+        
+        };
 
-        }, 600);
+        nextImage.src = images[currentImage];
+
     }
 
     function toggleCard() {
