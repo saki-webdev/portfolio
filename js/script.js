@@ -49,7 +49,7 @@
             img.classList.remove("fade-out");
             img.classList.add("fade-in");
 
-        }, 300);
+        }, 600);
     }
 
     function toggleCard() {

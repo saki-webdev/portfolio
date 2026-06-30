@@ -1,5 +1,18 @@
-    * {
+/* リセット */
+* {
         box-sizing: border-box;
+    }
+
+/* 共通 */
+
+    :root {
+        --bg: #ADC8DB;
+        --main: #255438;
+        --accent: #B55E43;
+        --accent-hover: #C96F52;
+
+        --text: #333;
+        --subtext: #666;
     }
 
     body {
@@ -29,6 +42,19 @@
         font-size: 44px;
         font-weight: 700;
         margin-bottom: 5px;
+        line-height: 1.3;
+
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+        letter-spacing: 1.3px;
+    }
+
+    .catch {
+        text-align: center;
+        margin: 0 0 25px 0;
+        color: #555;
+        font-size: 14px;
     }
 
     h2 {
@@ -71,15 +97,12 @@
         line-height: 1.6;
     }
 
-    .hobby-list {
-        color: #666;
-        margin-top: 5px;
-        text-align: left;
-        display: inline-block;
+        h2 + ul {
+        margin-top: 8px;
     }
 
-    h2 + ul {
-        margin-top: 8px;
+    a{
+        text-decoration: none;
     }
 
     img {
@@ -117,17 +140,6 @@
         margin-top: 30px;
     }
 
-    h1 {
-        text-align: center;
-        margin-left: auto;
-        margin-right: auto;
-        letter-spacing: 1.3px;
-    }
-
-    a{
-        text-decoration: none;
-    }
-
     button {
         margin: 5px;
         padding: 8px 16px;
@@ -146,11 +158,13 @@
         transform: translateY(-1px);
     }
 
-    .button-group {
-        display: flex;
-        justify-content: center;
-        gap: 10px;
-        flex-wrap: wrap;
+/* Section */
+
+    .hobby-list {
+        color: #666;
+        margin-top: 5px;
+        text-align: left;
+        display: inline-block;
     }
 
     .container {
@@ -243,63 +257,10 @@
         margin-top: 0;
     }
 
+/* ToDo */
+
     .todo-title {
         margin-top: 0;
-    }
-
-    body.dark {
-        background: linear-gradient(
-            135deg,
-            #243447,
-            #1B2635
-        );
-    }
-
-    body.dark .hero,
-    body.dark .section,
-    body.dark .todo-section {
-        background-color: #444;
-        border: 2px solid #3F7A5A;
-    }
-
-    body.dark .section:hover,
-    body.dark .todo-section:hover {
-        border-color: #3F7A5A;
-        background-color: #4a4a4a;
-    }
-
-    body.dark #todoList li {
-        background-color: #555;
-    }
-
-    body.dark p,
-    body.dark li,
-    body.dark h1,
-    body.dark h2,
-    body.dark h3 {
-        color: #fff;
-    }
-
-    body.dark h2 {
-        border-left-color: #3F7A5A;
-    }
-
-    body.dark h3 {
-        border-left-color: #3F7A5A;
-    }
-
-    body.dark #todoInput {
-        background-color: #555;
-        color: white;
-        border: 2px solid #3F7A5A;
-    }
-
-    body.dark #todoInput::placeholder {
-        color: #ccc;
-    }
-
-    body.dark #count.big {
-        color: red;
     }
 
     #todoList {
@@ -330,10 +291,6 @@
         border: 1px solid var(--main);
     }
 
-    body.dark #todoInput:focus {
-        border-color: #4F8A68;
-    }
-
     #todoList li {
         display: flex;
         justify-content: space-between;
@@ -349,6 +306,10 @@
 
     #todoList li:hover {
         transform: scale(1.01);
+    }
+
+    .demo-text {
+        font-weight: bold;
     }
 
     #todoList button {
@@ -391,46 +352,6 @@
         border-radius: 16px;
     }
 
-
-    :root {
-        --bg: #ADC8DB;
-        --main: #255438;
-        --accent: #B55E43;
-        --accent-hover: #C96F52;
-
-        --text: #333;
-        --subtext: #666;
-    }
-
-    @media (max-width: 600px) {
-
-        body {
-            padding: 10px;
-        }
-
-        .hero,
-        .section,
-        .todo-section {
-            padding: 20px;
-            transform: none;
-        }
-
-        #todoInput {
-            width: 100%;
-        }
-
-        .todo-input-area {
-            flex-direction: column;
-        }
-    }
-
-    .catch {
-        text-align: center;
-        margin: 0 0 25px 0;
-        color: #555;
-        font-size: 14px;
-    }
-    
     .github-area {
         display: flex;
         justify-content: center;
@@ -449,14 +370,6 @@
         background-color: #3F7A5A;
     }
 
-    body.dark .github-link {
-        background-color: #3F7A5A;
-    }
-
-    body.dark .github-link:hover {
-        background-color: #4F8A68;
-    }
-
     .action-btn {
         background-color: #4D7EA8;
     }
@@ -471,4 +384,166 @@
 
     .delete-btn:hover {
         background-color: var(--accent-hover);
+    }
+
+/* ダークモード */
+
+    body.dark {
+        background: linear-gradient(
+            135deg,
+            #243447,
+            #1B2635
+        );
+    }
+
+    body.dark .hero,
+    body.dark .section,
+    body.dark .todo-section {
+        background-color: #444;
+        border: 2px solid #3F7A5A;
+    }
+
+    body.dark .section:hover,
+    body.dark .todo-section:hover {
+        border-color: #3F7A5A;
+        background-color: #4a4a4a;
+    }
+
+    body.dark #todoList li {
+        background: #555;
+    }
+
+    body.dark p,
+    body.dark li,
+    body.dark h1,
+    body.dark h2,
+    body.dark h3 {
+        color: #fff;
+    }
+
+    body.dark h2 {
+        border-left-color: #3F7A5A;
+    }
+
+    body.dark h3 {
+        border-left-color: #3F7A5A;
+    }
+
+    body.dark #todoInput {
+        background-color: #555;
+        color: white;
+        border: 2px solid #3F7A5A;
+    }
+
+    body.dark #todoInput::placeholder {
+        color: #ccc;
+    }
+
+    body.dark #count.big {
+        color: #ff6b6b;
+    }
+
+    body.dark #todoInput:focus {
+        border-color: #4F8A68;
+    }
+
+    body.dark .github-link {
+        background-color: #3F7A5A;
+    }
+
+    body.dark .github-link:hover {
+        background-color: #4F8A68;
+    }
+
+/* レスポンシブ */
+
+    @media (max-width: 600px) {
+
+        body {
+            padding: 10px;
+        }
+
+        .hero,
+        .section,
+        .todo-section {
+            padding: 20px;
+            transform: none;
+        }
+
+        h1 {
+            font-size: 32px;
+        }
+
+        .catch {
+            font-size: 13px;
+        }
+
+        button {
+            width: auto;
+            padding: 12px 16px;
+            font-size: 15px;
+        }
+
+        h2 {
+            font-size: 20px;
+        }
+
+        h3 {
+            font-size: 16px;
+        }
+
+        p {
+            margin-left: 0;
+            font-size: 14px;
+        }
+
+        ul {
+            margin-left: 0;
+            padding-left: 20px;
+        }
+
+        li {
+            font-size: 14px;
+        }
+
+        .skill li {
+            margin-left: 0;
+        }
+
+        #todoInput {
+            width: 100%;
+        }
+
+        .todo-input-area {
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        /* スマホ用通常デザイン */
+        #todoList li {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 12px;
+
+            background-color: #ffffffbf;
+            border: 1px solid #ffffff99;
+
+            border-radius: 14px;
+            padding: 16px;
+        }
+
+        /* スマホ用ダークモード */
+        body.dark #todoList li {
+            background: #ffffff14;
+            border: 1px solid #ffffff26;
+        }
+
+        #todoList span {
+            width: 100%;
+        }
+
+        #todoList button {
+            align-self: flex-end;
+        }
+
     }
